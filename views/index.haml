@@ -1,11 +1,17 @@
 %html
   %head
     %title=@title
+    %link{ :rel => 'stylesheet', :href => '/stylesheets/screen.css', :type => 'text/css' }
     %link{ :rel => 'stylesheet', :href => '/stylesheet.css', :type => 'text/css'}
   %body
-    %h1=@title
-    %ul
-      - @meetups.each do |meetup|
-        %li
-          %span.date=meetup['date']
-          %span.place=meetup['place']
+    .container
+      .span-4 
+        %h1=@title
+      .span-4
+        %h2{ :style => "text-align: right" } Meetups
+      .span-12.last
+        %ul
+          - @meetups.each do |meetup|
+            %li
+              %span.date=meetup['date']
+              %span.place=meetup['place']
