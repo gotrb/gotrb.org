@@ -1,0 +1,11 @@
+%html
+  %head
+    %title=@title
+    %link{ :rel => 'stylesheet', :href => '/stylesheet.css', :type => 'text/css'}
+  %body
+    %h1=@title
+    %ul
+      - @meetups.each do |meetup|
+        %li
+          %span.date=meetup['date']
+          %span.place=meetup['place']
